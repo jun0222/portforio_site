@@ -17,8 +17,28 @@
     </header>
 
     <div class="first">
-      <h2>タイトル</h2>
-      <p>自己紹介をフェードインで書く。</p>
+      <p class="first-content"><span class="first-title">about</span><br>
+      未経験から、エンジニアとしての活躍すべく学習中。<br>
+      前職はコールセンターで管理者をしておりました。<br>
+      右も左もわからないながらも、「とにかくコードを書いて動かしてみる」<br>事の楽しさに気づき始めてきました。<br>
+      前職が接客業という事もあり、どういった物が求められているか？<br>
+      を考える事が好きです。<br><br><br>
+      エンジニアとしても自分の楽しみだけでなく、<br>
+      顧客に求められるサービスを出来るだけ早く届ける事ができる<br>
+      エンジニアになりたいと考えております。<br><br><br>
+
+      最初は何から勉強していいのかわからず、<br>
+      C言語/WordPressの書籍を読んでみたり<br>
+      Firebaseの環境構築を試してうまくいかず挫折した経験、<br>
+      Bootstrapを導入したものの扱いきれないという事もありましたが、<br>
+
+      2月26日よりTECH::EXPERTに通学、<br><br><br>
+
+      HTML/CSS/haml/SCSS/Javascript/jQuery/AWS/Ruby/RubyonRails/PHP/MySQL/herokuの学習を通して<br>
+      自身で問題を解決する力を身につけました。<br>
+      まだまだこれからも、更なるレベルアップを目指し<br>
+      コードを書き続けます。<br>
+      </p>
     </div>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -54,7 +74,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
     <div class="second">
-      <h2>タイトル</h2>
+      <h2>Recent</h2>
         <div class="container">
           <div class="row">
             <div class="col-md-6">
@@ -97,45 +117,30 @@
     </div>
 
     <div class="first">
-      <h2>タイトル</h2>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4 three-content">
-              <div class="left-content">
-                <div class="icon">
-                  <i class="fas fa-user"></i>
-                </div>
-                <p>左です</p>
-              </div>
-            </div>
-
-            <div class="col-md-4 three-content">
-              <div class="left-content">
-                <div class="icon">
-                  <i class="fas fa-blog"></i>
-                </div>
-                <p>真ん中です</p>
-              </div>
-            </div>
-
-            <div class="col-md-4 three-content">
-              <div class="left-content">
-                <div class="icon">
-                  <i class="fas fa-laptop-code"></i>
-                </div>
-                <p>右です</p>
-              </div>
-            </div>
-
+        <form action="/my-handling-form-page" method="post">
+          <label for="form" class="contact-label">Contact</label>
+        <div class="contact">
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="user_name">
           </div>
-        </div>
+          <div>
+            <label for="mail">E-mail</label>
+            <input type="email" id="mail" name="user_mail">
+          </div>
+          <div>
+            <label for="msg">Message</label>
+            <textarea id="msg" name="user_message" rows="5"></textarea>
+          </div>
+        </form>
+      </div>
     </div>
 
     <footer>
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            アイウエ
+            Jun's portforio
           </div>
         </div>
       </div>
@@ -148,6 +153,8 @@
   body{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: “ヒラギノ明朝 Pro W6″,”Hiragino Mincho Pro”,”HGS明朝E”,”ＭＳ Ｐ明朝”,serif;
   }
   .top-img{
     color: #DAA520;
@@ -166,16 +173,38 @@
     text-align: center;
     line-height: 100vh;
     font-size: 15px;
-    font-family: “ヒラギノ明朝 Pro W6″,”Hiragino Mincho Pro”,”HGS明朝E”,”ＭＳ Ｐ明朝”,serif;
   }
   .first{
     height: 100vh;
     width: 100%;
-    color: white;
+    color: #333;
+    font-size: 18px;
     background-image: url("imgs/fix-bg.jpg");
     background-size: cover;
     text-align: center;
+    overflow: scroll;
+    position: relative;
   }
+  .first-title{
+    font-size: 80px;
+  }
+  .first-content{
+  animation: fadeIn 1000s ease 0s 1 normal;
+  }
+  .first-content:hover {
+  -webkit-animation: fadeIn 12s ease 0s 1 normal;
+  }
+
+@keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+    }
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+    }
+
   .second{
     background-color: #333;
     color: white;
@@ -186,13 +215,26 @@
   .second h2{
     text-align: center;
     padding: 50px;
-    font-size: 80px;
+    font-size: 50px;
   }
   .service-img{
     width: 100%;
   }
   .three-content{
     border: solid white 2px;
+  }
+  .contact-label{
+    font-size: 50px;
+    margin-top: 100px;
+  }
+  .contact{
+    padding: 30px;
+    width: 300px;
+    position: absolute;
+    right: calc((100vw - 300px)/2);
+    left: calc((100vw - 300px)/2);
+    top: calc((100vh - 381px)/2);
+    bottom: calc((100vh - 381px)/2);
   }
   footer{
     text-align: center;
